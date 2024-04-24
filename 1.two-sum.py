@@ -10,13 +10,9 @@ class Solution:
         map={}
         for i in range(len(nums)):
             res = target - nums[i]
-            if res in map.keys():
-                return [i,map.get(res)]
+            if res not in map.keys():
+                map[nums[i]] = i
             else:
-                map[nums[i]]=i
-        return []
-
-
-        
+                return [i,map.get(res)]
+        return []      
 # @lc code=end
-

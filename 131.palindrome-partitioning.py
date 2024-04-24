@@ -13,7 +13,7 @@ class Solution:
         for j in range(i,len(s)):
             if s[i:j+1]==''.join(reversed(s[i:j+1])):
                 st.append(s[i:j+1])
-                x=self.dp(j+1,s,st)
+                self.dp(j+1,s,st)
                 st.pop()
         return
     

@@ -12,28 +12,29 @@
 #         self.next = next
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        count = 0
-        head = ListNode(0)
+        count =0 
+        head = ListNode()
         cur = head
-        while l1 or l2 or count == 1:
+        while l1 or l2 or count ==1:
             if not l1:
                 l1 = ListNode()
             if not l2:
                 l2 = ListNode()
-            head.next = ListNode(0)
-            head = head.next
-            head.val = (l1.val + l2.val + count)%10
-            if ((l1.val + l2.val + count)) > 9:
+            
+            #cur.next = ListNode()
+            #cur = cur.next
+            
+            cur.val = (l1.val+ l2.val + count) % 10
+            
+            if (l1.val+ l2.val + count) >9 :
                 count = 1
             else:
                 count = 0
             
-
-
-
+            
             l1 = l1.next
             l2 = l2.next
-        return cur.next
+        return head.next
            
 # @lc code=end
 
